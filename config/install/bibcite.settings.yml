@@ -1,2 +1,2 @@
 processor: citeproc-php
-default_style: apa
+default_style: ieee
