@@ -48,6 +48,9 @@ fields:
   bibcite_auth_address:
     visible: false
     required: false
+  bibcite_full_text:
+    visible: true
+    required: false
   bibcite_year:
     visible: true
     required: false

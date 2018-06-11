@@ -284,6 +284,11 @@ class Reference extends ContentEntityBase implements ReferenceInterface {
     $fields['bibcite_auth_address'] = $default_string_long(t('Author Address'));
 
     /*
+     * Custom text fields.
+     */
+    $fields['bibcite_full_text'] = $default_string_long(t('Full Text'), 8);
+
+    /*
      * Number fields.
      */
     $fields['bibcite_year'] = $default_integer(t('Year of Publication'), t('Format: yyyy'));
