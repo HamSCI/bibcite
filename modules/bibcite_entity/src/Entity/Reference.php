@@ -267,6 +267,30 @@ class Reference extends ContentEntityBase implements ReferenceInterface {
         ->setDisplayConfigurable('form', TRUE)
         ->setDisplayConfigurable('view', TRUE);
     };
+    
+    $default_text_long = function ($label, $rows = 1, $hint = '') use (&$weight) {
+      $weight++;
+      return BaseFieldDefinition::create('text_long')
+        ->setLabel($label)
+        ->setDescription($hint)
+        ->setSettings(array(
+          'default_value' => '',
+          'text_processing' => 0,
+        ))
+        ->setDisplayOptions('view', [
+          'type' => 'text_summary_or_trimmed',
+          'weight' => $weight,
+        ])
+        ->setDisplayOptions('form', [
+          'type' => 'text_textarea',
+          'settings' => [
+            'rows' => $rows,
+          ],
+          'weight' => $weight,
+        ])
+        ->setDisplayConfigurable('form', TRUE)
+        ->setDisplayConfigurable('view', TRUE);
+    };
 
     /*
      * Text fields.
@@ -286,7 +310,7 @@ class Reference extends ContentEntityBase implements ReferenceInterface {
     /*
      * Custom text fields.
      */
-    $fields['bibcite_full_text'] = $default_string_long(t('Full Text'), 8);
+    $fields['bibcite_full_text'] = $default_text_long(t('Full Text'), 8);
 
     /*
      * Number fields.
