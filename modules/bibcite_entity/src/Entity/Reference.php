@@ -176,7 +176,12 @@ class Reference extends ContentEntityBase implements ReferenceInterface {
         'weight' => 3,
       ])
       ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
+      ->setDisplayConfigurable('view', TRUE)
+      ->setSettings([
+        'handler_settings' => [
+          'auto_create' => TRUE,
+        ],
+      ]);
 
     $fields['keywords'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Keywords'))
