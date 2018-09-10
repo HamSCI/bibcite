@@ -1,2 +1,2 @@
 processor: citeproc-php
-default_style: ieee
+default_style: modern_language_association_8th_edition
